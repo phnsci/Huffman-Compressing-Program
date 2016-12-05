@@ -5,7 +5,7 @@ public class CharacterList {
   
   private char value;
   private int count = 0;
-  
+
   public CharacterList() {
   }
   
@@ -74,7 +74,6 @@ public class CharacterList {
     for (int i = 0; i < list.size(); i++) {
       System.out.println("i: " + i +   "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());
     }
-    
   }
 }
 

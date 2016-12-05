@@ -4,7 +4,6 @@ import java.net.*;
 import java.nio.file.*;
 
 public class FileReader {
-  
   public static String readFile(String fileName) throws IOException {
     String fileText = " ";
     try {
@@ -39,10 +38,5 @@ public class FileReader {
       catch(Exception ex) { 
       }
     }
-  }
-  
-  public static void main(String[] args) throws IOException {
-    System.out.println(FileReader.readFile("Text.txt"));
-    FileReader.writeFile("textWrite.txt", "This is a test.");
-  }
+  }  
 }
