@@ -1,6 +1,6 @@
 #Huffman-Compressing-Program
-A Java compressing program using Huffman coding algorithm
-For more information on the Huffman coding algorithm, see [HERE](https://en.wikipedia.org/wiki/Huffman_coding)
+A Java compressing program using Huffman coding algorithm.
+For more information about the Huffman coding algorithm, see [HERE](https://en.wikipedia.org/wiki/Huffman_coding)
 
 
 ###Testing
