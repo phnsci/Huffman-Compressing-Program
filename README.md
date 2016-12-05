@@ -9,8 +9,8 @@ Contributors:
     
 #Compilation
 #
-  ./install.sh
+    ./install.sh
   
 #Test
 # 
-  ./test.sh
+    ./test.sh
