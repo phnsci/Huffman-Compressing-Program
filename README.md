@@ -8,9 +8,7 @@ Contributors:
     2. Joel Rand
     
 #Compilation
-#
-    ./install.sh
+#   ./install.sh
   
 #Test
-# 
-    ./test.sh
+#   ./test.sh
