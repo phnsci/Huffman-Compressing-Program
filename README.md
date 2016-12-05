@@ -10,7 +10,4 @@ Contributors:
 #Compilation
 #
     ./install.sh
-  
-#Test
-#   
     ./test.sh
