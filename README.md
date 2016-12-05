@@ -7,7 +7,10 @@ Contributors:
     1. Phong Nguyen
     2. Joel Rand
     
-#Compilation
-#
-    ./install.sh
-    ./test.sh
+##Compilation
+
+```
+./install.sh
+./test.sh
+```
+
