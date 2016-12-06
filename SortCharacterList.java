@@ -27,8 +27,11 @@ public class SortCharacterList {
   
   private static void swap(CharacterList[] a, int i, int j) {
     int temp = a[i].getCount();
+    char tempChar = a[i].getChar();
     a[i].setCount(a[j].getCount());
+    a[i].setChar(a[j].getChar());
     a[j].setCount(temp);
+    a[j].setChar(tempChar);
   }
   
   private static int partition(CharacterList[] a, int left, int right) {
