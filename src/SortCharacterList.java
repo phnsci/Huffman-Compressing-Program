@@ -1,3 +1,7 @@
+/** error: stack overflow happens when there are two or more character
+  * have the same counter
+  */
+
 import java.util.*;
 import java.util.Arrays;
 

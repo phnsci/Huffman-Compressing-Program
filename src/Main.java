@@ -14,7 +14,7 @@ public class Main {
     Arrays.sort(sorted);
     
     // create an array list which stores an array of CharacterList objects 
-    List<CharacterList> list = new ArrayList<CharacterList>();
+    ArrayList<CharacterList> list = new ArrayList<CharacterList>();
     
     // create the first CharacaterList object int the array list 
     CharacterList e = new CharacterList(sorted[0], 1);
@@ -39,12 +39,14 @@ public class Main {
       }
     }
 
-		SortCharacterList.sortList(list);
+    SortCharacterList.sortList(list);
     
     for (int i = 0; i < list.size(); i++) {
-      System.out.println("i: " + i +   "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());
-      
+      System.out.println("i: " + i +   "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());  
     }
+    System.out.println("Merge Tree");
+    HuffmanTree.buildTree(list);
+    System.out.println(list.size());
   }
 }
 

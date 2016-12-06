@@ -20,6 +20,7 @@ public class CharacterList {
   private int count = 0;      // the counter of the above character 
   CharacterList left = null;
   CharacterList right = null;
+  String code = null;
   
  /**
   * class constructor 
@@ -79,5 +80,17 @@ public class CharacterList {
    */
   public void setCount(int count) {
     this.count = count;
+  }
+  
+  public void setLeft(CharacterList left) {
+    this.left = left;
+  }
+  
+  public void setRight(CharacterList right) {
+    this.right = right;
+  }
+  
+  public void setCode(String code) {
+    this.code = code;
   }
 }
