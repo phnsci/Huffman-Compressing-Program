@@ -5,15 +5,15 @@ import java.nio.file.*;
 
 public class Main {
   public static void main(String[] args) throws IOException {
-  	
-		String str = FileReader.readFile(args[0]);
+   
+  String str = FileReader.readFile(args[0]);
     char [] original = str.toCharArray();
     
-    // create a sorted character array, going through alphabet order 
+    // create a sorted character array in alphabet order 
     char [] sorted = str.toCharArray();
     Arrays.sort(sorted);
     
-    // an array list which stores an array of CharacterList objects 
+    // create an array list which stores an array of CharacterList objects 
     List<CharacterList> list = new ArrayList<CharacterList>();
     
     // create the first CharacaterList object int the array list 
@@ -25,7 +25,7 @@ public class Main {
 
     // iterate through the new sorted character array
     for (int i = 1; i < sorted.length; i++) {
-      // if find new character 
+      // if find new character add it to the array list
       if (sorted[i] != sorted[i -1]) {
         CharacterList newchar = new CharacterList(); 
         newchar.setChar(sorted[i]);
@@ -33,14 +33,17 @@ public class Main {
         oldchar = newchar;
         list.add(newchar);
       }
-      // if the character is repeated 
+      // if the character is repeated increase the character counter
       else {
         oldchar.increment();
       }
     }
+
+		SortCharacterList.sortList(list);
     
     for (int i = 0; i < list.size(); i++) {
       System.out.println("i: " + i +   "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());
+      
     }
   }
 }

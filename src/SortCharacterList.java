@@ -56,12 +56,13 @@ public class SortCharacterList {
     //printArray(a, left, right);
     return j; // a[j] = end of left array
   }
-  
+ 
+	
   public static void main(String[] args) {
     List<CharacterList> list = new ArrayList<CharacterList>();
     list.add(new CharacterList('a', 2));
     list.add(new CharacterList('b', 4));
-    list.add(new CharacterList('c', 1));
+    list.add(new CharacterList('c', 2));
     list.add(new CharacterList('d', 6));
     System.out.println("Before sort:");
     for (int i = 0; i < list.size(); i++) {
@@ -73,9 +74,5 @@ public class SortCharacterList {
       System.out.println("i: " + i + " " + "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());
     }
   }
-  
-  
-  
-  
-  
+	
 }
