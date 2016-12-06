@@ -3,14 +3,13 @@ import java.util.Arrays;
 
 public class SortCharacterList {
   
-  public static List<CharacterList> sortList(List<CharacterList> a) {
+  public static void sortList(List<CharacterList> a) {
     CharacterList[] cl = a.toArray(new CharacterList[a.size()]);
     quicksort(cl);
-    List<CharacterList> sortedList = new ArrayList<CharacterList>();
+    //List<CharacterList> sortedList = new ArrayList<CharacterList>();
     for(int i = 0; i < cl.length; i++) {
-      sortedList.add(cl[i]);
+      a.set(i, cl[i]);
     }
-    return sortedList;
   }
   
   private static void quicksort(CharacterList[] a) {
@@ -69,9 +68,9 @@ public class SortCharacterList {
       System.out.println("i: " + i + " " + "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());
     }
     System.out.println("After sort:");
-    List<CharacterList> sortedList = sortList(list);
+    sortList(list);
     for (int i = 0; i < list.size(); i++) {
-      System.out.println("i: " + i + " " + "Character: " + sortedList.get(i).getChar() + "  Occurence: " + sortedList.get(i).getCount());
+      System.out.println("i: " + i + " " + "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());
     }
   }
   
