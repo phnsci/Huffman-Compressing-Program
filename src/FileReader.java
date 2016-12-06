@@ -23,9 +23,7 @@ public class FileReader {
     catch(NoSuchFileException e) {
       System.out.println("No such file.");
     }
-    
     return fileText;
-    
   }
   
   public static void writeFile(String fileName, String fileContent) throws IOException {

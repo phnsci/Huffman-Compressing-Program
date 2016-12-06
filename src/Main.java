@@ -9,7 +9,8 @@ public class Main {
   String str = FileReader.readFile(args[0]);
     char [] original = str.toCharArray();
     
-    // create a sorted character array in alphabet order 
+    // sort the str in alphabet order in store in a 
+    // character array named sorted
     char [] sorted = str.toCharArray();
     Arrays.sort(sorted);
     
@@ -39,14 +40,20 @@ public class Main {
       }
     }
 
+    // sort the arraylist by the frequency of the character in this string
     SortCharacterList.sortList(list);
     
     for (int i = 0; i < list.size(); i++) {
       System.out.println("i: " + i +   "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());  
     }
+    
+    // build the Huffman tree by merging the nodes together
     System.out.println("Merge Tree");
     HuffmanTree.buildTree(list);
-    System.out.println(list.size());
+    
+    // encoding each character
+    // the function argument is the top node
+    HuffmanTree.enCode(list.get(0));
   }
 }
 

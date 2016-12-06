@@ -18,7 +18,11 @@ public class HuffmanTree {
     
     // the base case is there are at least 2 nodes in the array list
     if (size >= 2) {
-      // get the last two nodes in the array and remove them from array list
+      // quick sort the list
+      SortCharacterList.sortList(list);
+      
+      // get the last two nodes  
+      // and remove them from array list
       CharacterList node1 = list.get(size - 1);
       CharacterList node2 = list.get(size - 2);
       list.remove(size - 1);
@@ -32,6 +36,27 @@ public class HuffmanTree {
       
       // recursivly call the function
       buildTree(list);
+    }
+  }
+  
+  public static void enCode(CharacterList node) {
+    ArrayList<Boolean> code = new ArrayList<Boolean>();
+    // if the node is not leaf
+    if (node.hasLeft() || node.hasRight()) {      
+      if (node.hasLeft()) {
+        code.add(true);
+        node.setCode(code);
+        node = node.getLeft();
+      }
+      if (node.hasRight()) {
+        code.add(false);
+        node.setCode(code);
+        node = node.getRight();
+      }
+      // recursively go down the Huffman tree
+      enCode(node);
+    } else {
+      node.setCode(code);
     }
   }
 }

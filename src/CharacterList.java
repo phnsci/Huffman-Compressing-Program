@@ -17,15 +17,20 @@ public class CharacterList {
   
   
   private char value;         // the character will store in this object
-  private int count = 0;      // the counter of the above character 
-  CharacterList left = null;
-  CharacterList right = null;
-  String code = null;
+  private int count;      // the counter of the above character 
+  CharacterList left;
+  CharacterList right;
+  ArrayList<Boolean> code;
   
  /**
   * class constructor 
   */
   public CharacterList() {
+    this.value = '0';
+    this.count = 0;
+    this.left = null;
+    this.right = null;
+    this.code = new ArrayList<Boolean>();
   }
  
  /** 
@@ -36,6 +41,9 @@ public class CharacterList {
   public CharacterList(char v, int c) {
     this.value = v;
     this.count = c;
+    this.left = null;
+    this.right = null;
+    this.code = new ArrayList<Boolean>();
   }
  
  /**
@@ -90,7 +98,23 @@ public class CharacterList {
     this.right = right;
   }
   
-  public void setCode(String code) {
+  public boolean hasLeft() {
+    return (this.left != null);
+  }
+  
+  public boolean hasRight() {
+    return (this.right != null);
+  }
+  
+  public CharacterList getLeft() {
+    return this.left;
+  }
+  
+  public CharacterList getRight() {
+    return this.right;
+  }
+  
+  public void setCode(ArrayList<Boolean> code) {
     this.code = code;
   }
 }
