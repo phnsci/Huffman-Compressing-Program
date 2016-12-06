@@ -36,6 +36,7 @@ public class SortCharacterList {
   private static int partition(CharacterList[] a, int left, int right) {
     //printArray(a, left, right);
     Integer pivotValue = a[left].getCount();
+    CharacterList pivot = a[left];
     int i = left; // index going from left to right
     int j = right; // index going from right to left
     while (i < j) {
@@ -47,7 +48,7 @@ public class SortCharacterList {
        */
       while (i < a.length && a[i].getCount() <= pivotValue)
         i++;
-      while (a[j].getCount() > pivotValue)
+      while (a[j].getCount() >= pivotValue && a[j] != pivot)
         j--;
       if (i < j)
         swap(a, i, j);
@@ -59,10 +60,10 @@ public class SortCharacterList {
   
   public static void main(String[] args) {
     List<CharacterList> list = new ArrayList<CharacterList>();
-    list.add(new CharacterList('a', 2));
-    list.add(new CharacterList('b', 4));
+    list.add(new CharacterList('a', 1));
+    list.add(new CharacterList('b', 2));
     list.add(new CharacterList('c', 1));
-    list.add(new CharacterList('d', 6));
+    list.add(new CharacterList('d', 1));
     System.out.println("Before sort:");
     for (int i = 0; i < list.size(); i++) {
       System.out.println("i: " + i + " " + "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());
