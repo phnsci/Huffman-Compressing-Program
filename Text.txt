@@ -1,1 +1,1 @@
-bbbbbbaaadddddeeeeeeeqqqqqqqqxx
+hello world this is a test program using huffman coding algorithm
