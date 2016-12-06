@@ -1,9 +1,19 @@
+/** 
+ * The FileReader class have two functions:
+ * readFile: read a text file and return a string 
+ * writeFile: take a string as argument and printout a text file
+ * 
+ * @author Phong Nguyen - phn10
+ * @author Joel Rand - jsr99
+ */
+
 import java.io.*;
 import java.util.*;
 import java.net.*;
 import java.nio.file.*;
 
 public class FileReader {
+  
   public static String readFile(String fileName) throws IOException {
     String fileText = " ";
     try {
