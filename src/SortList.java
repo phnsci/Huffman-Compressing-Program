@@ -1,3 +1,9 @@
+/**
+ * The SortList class has one public function to call, which takes in and sorts a List of CharacterLists.
+ * @author Joel Rand
+ * @author Phong Nguyen
+ */
+
 import java.util.*;
 import java.util.Arrays;
 

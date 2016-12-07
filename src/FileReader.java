@@ -1,3 +1,9 @@
+/**
+ * The file reader class has two methods, one to read a string from a file, and another to write a string to a file
+ * @author Joel Rand
+ * @author Phong Nguyen
+ */
+
 import java.io.*;
 import java.util.*;
 import java.net.*;
