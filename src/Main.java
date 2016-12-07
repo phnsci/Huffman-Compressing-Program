@@ -43,17 +43,36 @@ public class Main {
     // sort the arraylist by the frequency of the character in this string
     SortCharacterList.sortList(list);
     
+    // make a copy of list   
+    ArrayList<CharacterList> base = new ArrayList<CharacterList>();
+    
     for (int i = 0; i < list.size(); i++) {
-      System.out.println("i: " + i +   "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());  
+      base.add(list.get(i));
     }
+    
+    System.out.println("BASE: ");
+   
+    for (int i = 0; i < base.size(); i++) {
+      System.out.print(base.get(i).getChar() + " ");  
+    }
+    System.out.println();
     
     // build the Huffman tree by merging the nodes together
     System.out.println("Merge Tree");
     HuffmanTree.buildTree(list);
     
+    System.out.println(list.get(0).getLeft().getChar());
+    
     // encoding each character
     // the function argument is the top node
     HuffmanTree.enCode(list.get(0));
+    
+    
+    System.out.println("New base: ");
+    for (int i = 0; i < base.size(); i++) {
+      System.out.println(base.get(i).getChar() + " " + base.get(i).getCode());  
+    }
+    System.out.println();
   }
 }
 

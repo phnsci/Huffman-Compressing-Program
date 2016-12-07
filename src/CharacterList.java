@@ -117,4 +117,8 @@ public class CharacterList {
   public void setCode(ArrayList<Boolean> code) {
     this.code = code;
   }
+  
+  public ArrayList<Boolean> getCode() {
+    return this.code;
+  }
 }

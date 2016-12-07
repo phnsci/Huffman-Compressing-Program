@@ -16,6 +16,11 @@ public class HuffmanTree {
   public static void buildTree(ArrayList<CharacterList> list) {
     int size = list.size();
     
+    
+      for (int i = 0; i < list.size(); i++) {
+        System.out.print(list.get(i).getChar() + " ");
+      }
+    
     // the base case is there are at least 2 nodes in the array list
     if (size >= 2) {
       // quick sort the list
@@ -32,30 +37,53 @@ public class HuffmanTree {
       CharacterList mergeNode = new CharacterList();
       mergeNode.setRight(node1);
       mergeNode.setLeft(node2);
+      mergeNode.setCount(node1.getCount() + node2.getCount());
       list.add(mergeNode);
       
+      System.out.println();
       // recursivly call the function
       buildTree(list);
     }
   }
   
   public static void enCode(CharacterList node) {
-    ArrayList<Boolean> code = new ArrayList<Boolean>();
+    ArrayList<Boolean> newCode = new ArrayList<Boolean>();
+    enCode(node, newCode);
+  }
+    
+  public static void enCode(CharacterList node, ArrayList<Boolean> code) {
+    
+    ArrayList<Boolean> newCode = new ArrayList<Boolean>();
+    
     // if the node is not leaf
-    if (node.hasLeft() || node.hasRight()) {      
+    if (node.hasLeft() || node.hasRight()) {
+      System.out.println("New Code: " + code);
       if (node.hasLeft()) {
-        code.add(true);
-        node.setCode(code);
+        System.out.println("go left");
+        
+        for (int i = 0; i < code.size(); i++)
+          newCode.add(code.get(i));
+        
+        newCode.add(true);
+        
+        node.setCode(newCode);
         node = node.getLeft();
+        enCode(node, newCode);
       }
       if (node.hasRight()) {
-        code.add(false);
-        node.setCode(code);
+        System.out.println("go right");
+        
+        for (int i = 0; i < code.size(); i++)
+          newCode.add(code.get(i));
+        
+        newCode.add(false);
+        
+        node.setCode(newCode);
         node = node.getRight();
+        enCode(node, newCode);
       }
-      // recursively go down the Huffman tree
-      enCode(node);
     } else {
+      System.out.println("set code: "+ code);
       node.setCode(code);
     }
   }
