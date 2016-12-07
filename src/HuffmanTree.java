@@ -1,11 +1,13 @@
 /**
- * HuffmanTree class have functions:
- * buildTree which receive an arraylist of CharacterList and return
- * a Huffman tree. The Huffman tree at this step is simple. We just merge
- * two characters having the lowest frequency. This method is simple but 
- * doesn't fully optimize the compression. We'll work more on this on the 
- * final version
+ * HuffmanTree class have 2 functions:
+ * 1. buildTree: receive an arraylist of CharacterList and return
+ * a Huffman tree using greedy algorithm
  *
+ * 2. enCode: receive a node from top of the Huffman tree and percolate
+ * down to the base. The function rely on the posion of the node on the 
+ * tree to encode the node >>> At this time, the function doesn't work 
+ * properly
+ * 
  * @author: Phong Nguyen - phn10
  * @author: Joel Rand -jsr99
  */
@@ -13,14 +15,13 @@
 import java.util.*;
 
 public class HuffmanTree {
+  /**
+   * this function receive an arraylist of CharacterList instance object and
+   * build a Huffman tree from them using greedy algorithm
+   * @param list a list of CharacterList objects
+   */
   public static void buildTree(ArrayList<CharacterList> list) {
     int size = list.size();
-    
-    
-      for (int i = 0; i < list.size(); i++) {
-        System.out.print(list.get(i).getChar() + " ");
-      }
-    
     // the base case is there are at least 2 nodes in the array list
     if (size >= 2) {
       // quick sort the list
@@ -40,27 +41,33 @@ public class HuffmanTree {
       mergeNode.setCount(node1.getCount() + node2.getCount());
       list.add(mergeNode);
       
-      System.out.println();
       // recursivly call the function
       buildTree(list);
     }
   }
   
+  /**
+   * encode each elements in the CharacterList array using Huffman coding algorithm
+   * @param node the top node of the Huffman tree
+   */
   public static void enCode(CharacterList node) {
     ArrayList<Boolean> newCode = new ArrayList<Boolean>();
     enCode(node, newCode);
   }
     
+  
+  /**
+   * encode each elements in the CharacterList array using Huffman coding algorithm
+   * @param node the top node of the Huffman tree
+   * @param code the code we gonna need for implementation
+   */
   public static void enCode(CharacterList node, ArrayList<Boolean> code) {
     
     ArrayList<Boolean> newCode = new ArrayList<Boolean>();
     
-    // if the node is not leaf
+    // if the node is not the leaf node
     if (node.hasLeft() || node.hasRight()) {
-      System.out.println("New Code: " + code);
       if (node.hasLeft()) {
-        System.out.println("go left");
-        
         for (int i = 0; i < code.size(); i++)
           newCode.add(code.get(i));
         
@@ -71,8 +78,6 @@ public class HuffmanTree {
         enCode(node, newCode);
       }
       if (node.hasRight()) {
-        System.out.println("go right");
-        
         for (int i = 0; i < code.size(); i++)
           newCode.add(code.get(i));
         
@@ -83,7 +88,6 @@ public class HuffmanTree {
         enCode(node, newCode);
       }
     } else {
-      System.out.println("set code: "+ code);
       node.setCode(code);
     }
   }

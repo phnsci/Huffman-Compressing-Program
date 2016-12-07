@@ -17,10 +17,10 @@ public class CharacterList {
   
   
   private char value;         // the character will store in this object
-  private int count;      // the counter of the above character 
-  CharacterList left;
-  CharacterList right;
-  ArrayList<Boolean> code;
+  private int count;          // the counter of the above character in the string
+  CharacterList left;         // left node
+  CharacterList right;        // right node 
+  ArrayList<Boolean> code;    // Huffman code for this node
   
  /**
   * class constructor 
@@ -49,7 +49,6 @@ public class CharacterList {
  /**
   * increase the counter of the character stored
   * in this object by one
-  * @return Nothing
   */
   public void increment() {
     this.count++;
@@ -57,7 +56,7 @@ public class CharacterList {
  
  /**
   * get the character stored inside this object
-  * @return The character stored in this object
+  * @return the character stored in this object
   */
   public char getChar() {
     return this.value;
@@ -74,7 +73,6 @@ public class CharacterList {
   /**
    * set the character stored in this object
    * @param ch the character we gonna store
-   * @return Nothing
    */
   public void setChar(char ch) {
     this.value = ch;
@@ -84,40 +82,71 @@ public class CharacterList {
   /**
    * set the counter of the character stored in this object
    * @param count the counter of the character in this object
-   * @return Nothing
    */
   public void setCount(int count) {
     this.count = count;
   }
   
+  /**
+   * setup the left node
+   * @param left the value of the left node
+   */
   public void setLeft(CharacterList left) {
     this.left = left;
   }
   
+  /**
+   * setup the right node
+   * @param right the value of the right node
+   */
   public void setRight(CharacterList right) {
     this.right = right;
   }
   
+  /**
+   * check if this node has left node
+   * @return true if it has left node
+   */
   public boolean hasLeft() {
     return (this.left != null);
   }
   
+  /**
+   * check if this node has right node
+   * @return true if it has right node
+   */
   public boolean hasRight() {
     return (this.right != null);
   }
   
+  /**
+   * get the left node of this node
+   * @return the left node of this node 
+   */
   public CharacterList getLeft() {
     return this.left;
   }
   
+  /**
+   * get the right node of this node
+   * @return the right node of this node
+   */
   public CharacterList getRight() {
     return this.right;
   }
   
+  /**
+   * set the Huffman code value of this node
+   * @param code the desired code we want to setup
+   */
   public void setCode(ArrayList<Boolean> code) {
     this.code = code;
   }
   
+  /**
+   * get the Huffman code of this node
+   * @return the Huffman code of this node
+   */
   public ArrayList<Boolean> getCode() {
     return this.code;
   }

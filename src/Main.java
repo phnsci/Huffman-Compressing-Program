@@ -1,12 +1,19 @@
+/**
+ * the Main program of the Huffman data compressing program
+ */
 import java.io.*;
 import java.util.*;
 import java.net.*;
 import java.nio.file.*;
 
 public class Main {
+  /**
+   * the main function of the main program. It receive a text file as input
+   * and output another text file storing the encoded data
+   * @param args arguments from command line
+   */
   public static void main(String[] args) throws IOException {
-   
-  String str = FileReader.readFile(args[0]);
+    String str = FileReader.readFile(args[0]);
     char [] original = str.toCharArray();
     
     // sort the str in alphabet order in store in a 
@@ -20,10 +27,10 @@ public class Main {
     // create the first CharacaterList object int the array list 
     CharacterList e = new CharacterList(sorted[0], 1);
     list.add(e);
-   
+    
     CharacterList oldchar = new CharacterList();
     oldchar = e;
-
+    
     // iterate through the new sorted character array
     for (int i = 1; i < sorted.length; i++) {
       // if find new character add it to the array list
@@ -39,7 +46,7 @@ public class Main {
         oldchar.increment();
       }
     }
-
+    
     // sort the arraylist by the frequency of the character in this string
     SortCharacterList.sortList(list);
     
@@ -50,15 +57,7 @@ public class Main {
       base.add(list.get(i));
     }
     
-    System.out.println("BASE: ");
-   
-    for (int i = 0; i < base.size(); i++) {
-      System.out.print(base.get(i).getChar() + " ");  
-    }
-    System.out.println();
-    
     // build the Huffman tree by merging the nodes together
-    System.out.println("Merge Tree");
     HuffmanTree.buildTree(list);
     
     System.out.println(list.get(0).getLeft().getChar());
@@ -67,12 +66,9 @@ public class Main {
     // the function argument is the top node
     HuffmanTree.enCode(list.get(0));
     
-    
-    System.out.println("New base: ");
     for (int i = 0; i < base.size(); i++) {
-      System.out.println(base.get(i).getChar() + " " + base.get(i).getCode());  
-    }
-    System.out.println();
+      System.out.println("Index: " + i + "  |  Character : " + base.get(i).getChar() + "  |   Counter: " + base.get(i).getCount() + "  | Code: " + base.get(i).getCode());  
+    } 
   }
 }
 
