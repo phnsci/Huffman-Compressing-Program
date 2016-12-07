@@ -8,7 +8,7 @@ public class SortCharacterList {
     quicksort(cl);
     //List<CharacterList> sortedList = new ArrayList<CharacterList>();
     for(int i = 0; i < cl.length; i++) {
-      a.set(i, cl[i]);
+      a.set(i, cl[(cl.length - 1) - i]);
     }
   }
   
