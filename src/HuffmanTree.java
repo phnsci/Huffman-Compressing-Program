@@ -25,7 +25,7 @@ public class HuffmanTree {
     // the base case is there are at least 2 nodes in the array list
     if (size >= 2) {
       // quick sort the list
-      SortCharacterList.sortList(list);
+      SortList.sortList(list);
       
       // get the last two nodes  
       // and remove them from array list

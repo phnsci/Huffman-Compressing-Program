@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd bin 
-java Main "../Text.txt"
+java Main "../DemoInput.txt" > "../DemoOutput.txt"

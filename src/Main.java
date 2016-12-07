@@ -13,7 +13,7 @@ public class Main {
    * @param args arguments from command line
    */
   public static void main(String[] args) throws IOException {
-    String str = FileReader.readFile(args[0]);
+    String str = FileReader.readFile("../DemoInput.txt");
     char [] original = str.toCharArray();
     
     // sort the str in alphabet order in store in a 
@@ -48,7 +48,7 @@ public class Main {
     }
     
     // sort the arraylist by the frequency of the character in this string
-    SortCharacterList.sortList(list);
+    SortList.sortList(list);
     
     // make a copy of list   
     ArrayList<CharacterList> base = new ArrayList<CharacterList>();
