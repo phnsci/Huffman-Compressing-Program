@@ -1,0 +1,23 @@
+
+
+Index: 0  |  Character : 
+  |   Counter: 1  | Code: [true]
+Index: 1  |  Character : y  |   Counter: 1  | Code: []
+Index: 2  |  Character : s  |   Counter: 1  | Code: []
+Index: 3  |  Character : w  |   Counter: 1  | Code: []
+Index: 4  |  Character : c  |   Counter: 2  | Code: []
+Index: 5  |  Character : e  |   Counter: 2  | Code: []
+Index: 6  |  Character : f  |   Counter: 2  | Code: []
+Index: 7  |  Character : a  |   Counter: 2  | Code: []
+Index: 8  |  Character : m  |   Counter: 2  | Code: []
+Index: 9  |  Character : u  |   Counter: 2  | Code: []
+Index: 10  |  Character : t  |   Counter: 2  | Code: []
+Index: 11  |  Character : h  |   Counter: 3  | Code: []
+Index: 12  |  Character : d  |   Counter: 3  | Code: []
+Index: 13  |  Character : r  |   Counter: 3  | Code: []
+Index: 14  |  Character : i  |   Counter: 4  | Code: []
+Index: 15  |  Character : g  |   Counter: 4  | Code: []
+Index: 16  |  Character : l  |   Counter: 4  | Code: []
+Index: 17  |  Character : o  |   Counter: 5  | Code: []
+Index: 18  |  Character : n  |   Counter: 5  | Code: []
+Index: 19  |  Character :    |   Counter: 7  | Code: []
