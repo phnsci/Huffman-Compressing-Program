@@ -22,9 +22,9 @@ public class CharacterList {
   CharacterList right;        // right node 
   ArrayList<Boolean> code;    // Huffman code for this node
   
- /**
-  * class constructor 
-  */
+  /**
+   * class constructor 
+   */
   public CharacterList() {
     this.value = "0";
     this.count = 0;
@@ -32,12 +32,12 @@ public class CharacterList {
     this.right = null;
     this.code = new ArrayList<Boolean>();
   }
- 
- /** 
-  * class constructor
-  * @param v character 
-  * @param c the counter of that character in the string
-  */
+  
+  /** 
+   * class constructor
+   * @param v character 
+   * @param c the counter of that character in the string
+   */
   public CharacterList(String v, int c) {
     this.value = v;
     this.count = c;
@@ -45,19 +45,19 @@ public class CharacterList {
     this.right = null;
     this.code = new ArrayList<Boolean>();
   }
- 
- /**
-  * increase the counter of the character stored
-  * in this object by one
-  */
+  
+  /**
+   * increase the counter of the character stored
+   * in this object by one
+   */
   public void increment() {
     this.count++;
   }
- 
- /**
-  * get the character stored inside this object
-  * @return the character stored in this object
-  */
+  
+  /**
+   * get the character stored inside this object
+   * @return the character stored in this object
+   */
   public String getChar() {
     return this.value;
   }
@@ -79,7 +79,7 @@ public class CharacterList {
   }
   
   public void appendChar(char c) {
-	  this.value += c;
+    this.value += c;
   }
   
   /**
@@ -155,10 +155,10 @@ public class CharacterList {
   }
   
   public void printChild() {
-	  System.out.println("_____________");
-	  if (this.hasLeft())
-		  System.out.println("left: " + this.getLeft().getCount());
-	  if (this.hasRight())
-		  System.out.println("right: " + this.getRight().getCount());
+    System.out.println("_____________");
+    if (this.hasLeft())
+      System.out.println("left: " + this.getLeft().getCount());
+    if (this.hasRight())
+      System.out.println("right: " + this.getRight().getCount());
   }
 }
