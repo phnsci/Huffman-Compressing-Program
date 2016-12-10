@@ -21,7 +21,10 @@ public class HuffmanTree {
    * @param list a list of CharacterList objects
    */
   public static void buildTree(ArrayList<CharacterList> list) {
-    int size = list.size();
+    
+	printTree(list);
+	
+	int size = list.size();
     // the base case is there are at least 2 nodes in the array list
     if (size >= 2) {
       // quick sort the list
@@ -38,8 +41,11 @@ public class HuffmanTree {
       CharacterList mergeNode = new CharacterList();
       mergeNode.setRight(node1);
       mergeNode.setLeft(node2);
+      mergeNode.setChar(node1.getChar() + node2.getChar());
       mergeNode.setCount(node1.getCount() + node2.getCount());
+      mergeNode.printChild();
       list.add(mergeNode);
+      
       
       // recursivly call the function
       buildTree(list);
@@ -63,32 +69,48 @@ public class HuffmanTree {
    */
   public static void enCode(CharacterList node, ArrayList<Boolean> code) {
     
-    ArrayList<Boolean> newCode = new ArrayList<Boolean>();
-    
-    // if the node is not the leaf node
-    if (node.hasLeft() || node.hasRight()) {
+	  ArrayList<Boolean> newCode = new ArrayList<Boolean>();
+	    for (int i = 0; i < code.size(); i++)
+	        newCode.add(code.get(i));
+	    node.setCode(newCode);  
+	  
+      // if the node has left node
       if (node.hasLeft()) {
-        for (int i = 0; i < code.size(); i++)
-          newCode.add(code.get(i));
-        
-        newCode.add(true);
-        
-        node.setCode(newCode);
-        node = node.getLeft();
-        enCode(node, newCode);
+    	  
+    	ArrayList<Boolean> leftCode = new ArrayList<Boolean>();
+    	for (int i = 0; i < newCode.size(); i++)
+	        leftCode.add(newCode.get(i));
+    	  
+        leftCode.add(true);
+        System.out.println("from " + node.getChar()); 
+        CharacterList newNode = node.getLeft();
+        System.out.println(" to left node: " + newNode.getChar());
+        // recursively call the function to encode the node below
+        enCode(newNode, leftCode);
       }
+      // if the node has right node
       if (node.hasRight()) {
-        for (int i = 0; i < code.size(); i++)
-          newCode.add(code.get(i));
-        
-        newCode.add(false);
-        
-        node.setCode(newCode);
-        node = node.getRight();
-        enCode(node, newCode);
-      }
-    } else {
-      node.setCode(code);
-    }
+    	  
+    	  ArrayList<Boolean> rightCode = new ArrayList<Boolean>();
+      	for (int i = 0; i < newCode.size(); i++)
+  	        rightCode.add(newCode.get(i));  
+    	  
+    	  
+        rightCode.add(false);
+        System.out.println("from " + node.getChar()); 
+        CharacterList newNode = node.getRight();
+        System.out.println(" to right node: " + newNode.getChar());
+
+        // recursively call the function to encode the node below
+        enCode(newNode, rightCode);
+        }
+  }
+  
+  public static void printTree(ArrayList<CharacterList> list) {
+	  int size = list.size();
+	  for (int i = 0; i < size; i++) {
+		  System.out.print(list.get(i).getChar() + " ");
+	  }
+	  System.out.println();
   }
 }

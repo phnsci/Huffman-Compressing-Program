@@ -13,7 +13,7 @@ public class Main {
    * @param args arguments from command line
    */
   public static void main(String[] args) throws IOException {
-    String str = FileReader.readFile("../DemoInput.txt");
+    String str = FileReader.readFile("DemoInput.txt");
     char [] original = str.toCharArray();
     
     // sort the str in alphabet order in store in a 
@@ -25,7 +25,7 @@ public class Main {
     ArrayList<CharacterList> list = new ArrayList<CharacterList>();
     
     // create the first CharacaterList object int the array list 
-    CharacterList e = new CharacterList(sorted[0], 1);
+    CharacterList e = new CharacterList(String.valueOf(sorted[0]), 1);
     list.add(e);
     
     CharacterList oldchar = new CharacterList();
@@ -36,7 +36,7 @@ public class Main {
       // if find new character add it to the array list
       if (sorted[i] != sorted[i -1]) {
         CharacterList newchar = new CharacterList(); 
-        newchar.setChar(sorted[i]);
+        newchar.setChar(String.valueOf(sorted[i]));
         newchar.setCount(1);
         oldchar = newchar;
         list.add(newchar);
@@ -64,6 +64,7 @@ public class Main {
     
     // encoding each character
     // the function argument is the top node
+    System.out.println("top node left node " + list.get(0).getRight().getChar());
     HuffmanTree.enCode(list.get(0));
     
     for (int i = 0; i < base.size(); i++) {

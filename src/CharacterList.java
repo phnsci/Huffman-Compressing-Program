@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class CharacterList {
   
   
-  private char value;         // the character will store in this object
+  private String value;         // the character will store in this object
   private int count;          // the counter of the above character in the string
   CharacterList left;         // left node
   CharacterList right;        // right node 
@@ -26,7 +26,7 @@ public class CharacterList {
   * class constructor 
   */
   public CharacterList() {
-    this.value = '0';
+    this.value = "0";
     this.count = 0;
     this.left = null;
     this.right = null;
@@ -38,7 +38,7 @@ public class CharacterList {
   * @param v character 
   * @param c the counter of that character in the string
   */
-  public CharacterList(char v, int c) {
+  public CharacterList(String v, int c) {
     this.value = v;
     this.count = c;
     this.left = null;
@@ -58,7 +58,7 @@ public class CharacterList {
   * get the character stored inside this object
   * @return the character stored in this object
   */
-  public char getChar() {
+  public String getChar() {
     return this.value;
   }
   
@@ -74,10 +74,13 @@ public class CharacterList {
    * set the character stored in this object
    * @param ch the character we gonna store
    */
-  public void setChar(char ch) {
+  public void setChar(String ch) {
     this.value = ch;
   }
   
+  public void appendChar(char c) {
+	  this.value += c;
+  }
   
   /**
    * set the counter of the character stored in this object
@@ -149,5 +152,13 @@ public class CharacterList {
    */
   public ArrayList<Boolean> getCode() {
     return this.code;
+  }
+  
+  public void printChild() {
+	  System.out.println("_____________");
+	  if (this.hasLeft())
+		  System.out.println("left: " + this.getLeft().getCount());
+	  if (this.hasRight())
+		  System.out.println("right: " + this.getRight().getCount());
   }
 }

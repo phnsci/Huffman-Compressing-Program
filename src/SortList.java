@@ -85,26 +85,4 @@ public class SortList {
     swap(a, left, j);
     return j; // a[j] = end of left array
   }
-  
-  public static void main(String[] args) {
-    List<CharacterList> list = new ArrayList<CharacterList>();
-    list.add(new CharacterList('a', 1));
-    list.add(new CharacterList('b', 2));
-    list.add(new CharacterList('c', 1));
-    list.add(new CharacterList('d', 1));
-    System.out.println("Before sort:");
-    for (int i = 0; i < list.size(); i++) {
-      System.out.println("i: " + i + " " + "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());
-    }
-    System.out.println("After sort:");
-    sortList(list);
-    for (int i = 0; i < list.size(); i++) {
-      System.out.println("i: " + i + " " + "Character: " + list.get(i).getChar() + "  Occurence: " + list.get(i).getCount());
-    }
-  }
-  
-  
-  
-  
-  
 }
