@@ -1,1 +1,1 @@
-aabbcdd
+hello world this is a testing document using huffman encoding algorithm

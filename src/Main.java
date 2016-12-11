@@ -79,5 +79,6 @@ public class Main {
         BinaryStdOut.write(table.get(String.valueOf(original[i])).get(j));
       }
     }
+    BinaryStdOut.flush();
   }
 }
