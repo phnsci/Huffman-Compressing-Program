@@ -1,4 +1,3 @@
 #!/bin/bash
-
-cd bin 
+cd bin
 java Main "../DemoInput.txt" > "../DemoOutput.txt"
