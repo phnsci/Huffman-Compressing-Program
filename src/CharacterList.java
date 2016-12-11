@@ -153,12 +153,4 @@ public class CharacterList {
   public ArrayList<Boolean> getCode() {
     return this.code;
   }
-  
-  public void printChild() {
-    System.out.println("_____________");
-    if (this.hasLeft())
-      System.out.println("left: " + this.getLeft().getCount());
-    if (this.hasRight())
-      System.out.println("right: " + this.getRight().getCount());
-  }
 }

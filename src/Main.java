@@ -13,7 +13,7 @@ public class Main {
    * @param args arguments from command line
    */
   public static void main(String[] args) throws IOException {
-    String str = FileReader.readFile("DemoInput.txt");
+    String str = FileReader.readFile("../DemoInput.txt");
     char [] original = str.toCharArray();
     
     // sort the str in alphabet order in store in a 
@@ -52,7 +52,6 @@ public class Main {
     
     // make a copy of list   
     ArrayList<CharacterList> base = new ArrayList<CharacterList>();
-    
     for (int i = 0; i < list.size(); i++) {
       base.add(list.get(i));
     }
@@ -60,16 +59,25 @@ public class Main {
     // build the Huffman tree by merging the nodes together
     HuffmanTree.buildTree(list);
     
-    System.out.println(list.get(0).getLeft().getChar());
-    
     // encoding each character
     // the function argument is the top node
-    System.out.println("top node left node " + list.get(0).getRight().getChar());
     HuffmanTree.enCode(list.get(0));
     
-    for (int i = 0; i < base.size(); i++) {
-      System.out.println("Index: " + i + "  |  Character : " + base.get(i).getChar() + "  |   Counter: " + base.get(i).getCount() + "  | Code: " + base.get(i).getCode());  
-    } 
+    // create a hash table storing pairs of character and binary representation
+    // so we can get binary value out with characters representation
+    Hashtable<String, ArrayList<Boolean>> table = new Hashtable<String, ArrayList<Boolean>>();
+    for (int i = 0; i < base.size(); i++)
+      table.put(base.get(i).getChar(), base.get(i).getCode());
+      
+    // ouput to stdout
+    // iterate through the character array
+    for (int i = 0; i < original.length; i++) {
+      // get the binary representation of each characters
+      //System.out.println(list.get(original[i]));
+      int char_code_size = table.get(String.valueOf(original[i])).size();
+      for (int j = 0; j < char_code_size; j++) {
+        BinaryStdOut.write(table.get(String.valueOf(original[i])).get(j));
+      }
+    }
   }
 }
-

@@ -13,6 +13,7 @@
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.util.*;
 
 /**
  *  <i>Binary standard output</i>. This class provides methods for converting
@@ -269,14 +270,22 @@ public final class BinaryStdOut {
      *
      * @param args the command-line arguments
      */
+    
     public static void main(String[] args) {
-        int m = Integer.parseInt(args[0]);
+        //int m = Integer.parseInt(args[0]);
 
+        Boolean[] str = new Boolean[] {true, true, false, false, false, true, true, false, true, true};
+        
+        //System.out.println(str[0]);
+        
+        
         // write n integers to binary standard output
-        for (int i = 0; i < m; i++) {
-            BinaryStdOut.write(i);
+        
+        for (int i = 0; i < str.length; i++) {
+            BinaryStdOut.write(str[i]);
         }
         BinaryStdOut.flush();
+        
     }
-
+    
 }

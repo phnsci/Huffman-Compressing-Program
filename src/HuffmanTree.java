@@ -22,7 +22,7 @@ public class HuffmanTree {
    */
   public static void buildTree(ArrayList<CharacterList> list) {
     
-    printTree(list);
+    //printTree(list);
     
     int size = list.size();
     // the base case is there are at least 2 nodes in the array list
@@ -43,7 +43,7 @@ public class HuffmanTree {
       mergeNode.setLeft(node2);
       mergeNode.setChar(node1.getChar() + node2.getChar());
       mergeNode.setCount(node1.getCount() + node2.getCount());
-      mergeNode.printChild();
+      //mergeNode.printChild();
       list.add(mergeNode);
       
       
@@ -79,9 +79,9 @@ public class HuffmanTree {
       for (int i = 0; i < newCode.size(); i++)
         leftCode.add(newCode.get(i));
       leftCode.add(true);
-      System.out.println("from " + node.getChar()); 
+      //System.out.println("from " + node.getChar()); 
       CharacterList newNode = node.getLeft();
-      System.out.println(" to left node: " + newNode.getChar());
+      //System.out.println(" to left node: " + newNode.getChar());
       // recursively call the function to encode the node below
       enCode(newNode, leftCode);
     }
@@ -91,19 +91,11 @@ public class HuffmanTree {
       for (int i = 0; i < newCode.size(); i++)
         rightCode.add(newCode.get(i));  
       rightCode.add(false);
-      System.out.println("from " + node.getChar()); 
+      //System.out.println("from " + node.getChar()); 
       CharacterList newNode = node.getRight();
-      System.out.println(" to right node: " + newNode.getChar());
+      //System.out.println(" to right node: " + newNode.getChar());
       // recursively call the function to encode the node below
       enCode(newNode, rightCode);
     }
-  }
-  
-  public static void printTree(ArrayList<CharacterList> list) {
-    int size = list.size();
-    for (int i = 0; i < size; i++) {
-      System.out.print(list.get(i).getChar() + " ");
-    }
-    System.out.println();
   }
 }

@@ -1,1 +1,1 @@
-try hello world encoding using huffman coding algorithm
+aabbcdd
