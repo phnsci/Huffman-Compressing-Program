@@ -68,7 +68,12 @@ public class Main {
     Hashtable<String, ArrayList<Boolean>> table = new Hashtable<String, ArrayList<Boolean>>();
     for (int i = 0; i < base.size(); i++)
       table.put(base.get(i).getChar(), base.get(i).getCode());
-      
+    
+		File file = new File("../DemoOutput.txt");
+		FileOutputStream fos = new FileOutputStream(file);
+		PrintStream ps = new PrintStream(fos);
+		System.setOut(ps);
+
     // ouput to stdout
     // iterate through the character array
     for (int i = 0; i < original.length; i++) {
@@ -79,6 +84,6 @@ public class Main {
         BinaryStdOut.write(table.get(String.valueOf(original[i])).get(j));
       }
     }
-    BinaryStdOut.flush();
-  }
+		BinaryStdOut.flush();
+	}
 }

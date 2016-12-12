@@ -1,1 +1,2 @@
 hello world this is a testing document using huffman encoding algorithm
+i just want to increase the length of this document to test the algorithm
