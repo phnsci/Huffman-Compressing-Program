@@ -13,7 +13,7 @@ public class Main {
    * @param args arguments from command line
    */
   public static void main(String[] args) throws IOException {
-    String str = FileReader.readFile("../DemoInput.txt");
+    String str = FileReader.readFile("../input.txt");
     char [] original = str.toCharArray();
     
     // sort the str in alphabet order in store in a 
@@ -69,11 +69,17 @@ public class Main {
     for (int i = 0; i < base.size(); i++)
       table.put(base.get(i).getChar(), base.get(i).getCode());
     
-		File file = new File("../DemoOutput.txt");
-		FileOutputStream fos = new FileOutputStream(file);
-		PrintStream ps = new PrintStream(fos);
-		System.setOut(ps);
-
+    /* For debugging purpose
+     * printout the internal coding for each characters
+    for (int i = 0; i < base.size(); i++) 
+      System.out.println(base.get(i).getChar() + " " + base.get(i).getCode());
+    */
+    
+    File file = new File("../output.txt");
+    FileOutputStream fos = new FileOutputStream(file);
+    PrintStream ps = new PrintStream(fos);
+    System.setOut(ps);
+    
     // ouput to stdout
     // iterate through the character array
     for (int i = 0; i < original.length; i++) {
@@ -84,6 +90,6 @@ public class Main {
         BinaryStdOut.write(table.get(String.valueOf(original[i])).get(j));
       }
     }
-		BinaryStdOut.flush();
-	}
+    BinaryStdOut.flush();
+  }
 }

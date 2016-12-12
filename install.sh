@@ -1,4 +1,4 @@
 #!/bin/bash
 cd src
-javac * -d ../bin
+javac *.java -d ../bin
 echo "compilation complete!!"

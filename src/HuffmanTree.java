@@ -58,6 +58,12 @@ public class HuffmanTree {
    */
   public static void enCode(CharacterList node) {
     ArrayList<Boolean> newCode = new ArrayList<Boolean>();
+    
+    // if there is only one type of character in the file
+    // we will assign false as the code of that character
+    if (!node.hasLeft() && !node.hasRight())
+      newCode.add(false);
+    
     enCode(node, newCode);
   }
   
