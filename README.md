@@ -41,8 +41,7 @@ The output.txt is compressed and has half size of the input.txt. All the charact
 
 #V. How you can test the program?
 
-
-A. In Linux (and you have /bin/bash)
+###A. In Linux (and you have /bin/bash)
 Go to computer terminal, navigate to the code directory:
 You can see two bash scripts: install.sh and run.sh
 To compile the program, type
@@ -61,11 +60,8 @@ To run the test, run
 It gonna create the file output.txt
 
 
-B. In Windows 
-Use any IDE you have (I often use DrJava and Eclipse) and open up the file, click on compile    and run
-
-
-
+###B. In Windows 
+Use any IDE you have (I often use DrJava and Eclipse) and open up the file, click on compile and run
 
 In either cases, after running the program, you gonna see the output.txt file 
 You can try to change the length of input.txt and see how length and the diversity of characters in input.txt changes output.txt
